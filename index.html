@@ -58,15 +58,15 @@
         #row1 span {
             position: absolute;
             left: 100%; /* Start off to the right */
-            animation: moveText 3s linear infinite; /* Animation to move text */
+            animation: moveText 0.1s linear infinite; /* Animation to move text */
         }
 
         @keyframes moveText {
             0% {
-                left: 100%; /* Start offscreen to the right */
+                left: 80%; /* Start offscreen to the right */
             }
             100% {
-                left: -10%; /* End offscreen to the left */
+                left: 10%; /* End offscreen to the left */
             }
         }
 
@@ -181,10 +181,10 @@
     <div class="main">
         <!-- Logo -->
         <div id="row1">
-            
+            <img id="logo1" src="DN (1).png" alt="Logo">
             <span>DN Gems</span>
             <img id="logo" src="DN (1).png" alt="Logo">
-            <img id="logo1" src="DN (1).png" alt="Logo">
+            
         </div>
         <div id="row2">
             <div class="col1"><a href="index.html">Home</a></div>
@@ -199,7 +199,7 @@
             </div>
 
             <div id="client">
-                <video id="video1" width="700" height="300" autoplay controls loop muted>
+                <video id="video1" width="700" height="300" autoplay loop muted playsinline>
                     <source src="1.mp4" type="video/mp4">
                 </video>
             </div>
