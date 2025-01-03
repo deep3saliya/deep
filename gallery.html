@@ -44,11 +44,21 @@
         /* Hover effect */
         .image-container:hover {
             transform: scale(1.08);
-            box-shadow: 15 50px 50px rgba(206, 204, 207, 0.2);
+            box-shadow: 0 50px 50px rgba(206, 204, 207, 0.2);
+            animation: vibrate 0.1s linear infinite;
         }
 
         .image-container:hover img {
-            transform: scale(1.1);
+            transform: scale(1.6);
+        }
+
+        /* Vibration keyframe */
+        @keyframes vibrate {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-15%); }
+            50% { transform: translateX(15%); }
+            75% { transform: translateX(-15%); }
+            100% { transform: translateX(15%); }
         }
 
         /* Responsive design: Adjust number of columns based on screen width */
@@ -63,6 +73,7 @@
                 columns: 1;
             }
         }
+
         .col1 {
             width: 230px;
             height: 100px;
