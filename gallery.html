@@ -38,6 +38,7 @@
             transition: transform 0.3s ease;
         }
 
+        /* Vibration effect */
         .image-container.vibrate {
             animation: vibrate 0.2s linear infinite;
         }
@@ -207,13 +208,12 @@
             <div class="col1"><a href="contact.html">Contact Us</a></div>
         </div>
     </div>
-    <script>
-        // Function to detect if the device is touch-enabled
-        const isTouchDevice = () => {
-            return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-        };
+     <script>
+        // Detect if the device supports touch
+        const isTouchDevice = () => 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
         if (isTouchDevice()) {
+            // Apply vibration effect on touch devices
             document.querySelectorAll('.image-container').forEach(container => {
                 container.addEventListener('touchstart', () => {
                     container.classList.add('vibrate');
