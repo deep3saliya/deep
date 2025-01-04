@@ -13,6 +13,7 @@
             padding: 0;
         }
 
+        /* Gallery container with CSS Columns for masonry effect */
         .gallery {
             columns: 3;
             column-gap: 20px;
@@ -21,6 +22,7 @@
             margin: 0 auto;
         }
 
+        /* Image container */
         .image-container {
             margin-bottom: 20px;
             display: inline-block;
@@ -31,6 +33,7 @@
             position: relative;
         }
 
+        /* Image styling */
         .image-container img {
             width: 100%;
             height: auto;
@@ -38,19 +41,17 @@
             transition: transform 0.3s ease;
         }
 
-        /* Vibration effect */
-        .image-container.vibrate {
-            animation: vibrate 0.2s linear infinite;
+        /* Hover effect */
+        .image-container:hover {
+            transform: scale(1.08);
+            box-shadow: 0 50px 50px rgba(206, 204, 207, 0.2);
         }
 
-        @keyframes vibrate {
-            0% { transform: translateX(0); }
-            25% { transform: translateX(-5px); }
-            50% { transform: translateX(5px); }
-            75% { transform: translateX(-5px); }
-            100% { transform: translateX(5px); }
+        .image-container:hover img {
+            transform: scale(1.1);
         }
 
+        /* Responsive design: Adjust number of columns based on screen width */
         @media screen and (max-width: 1200px) {
             .gallery {
                 columns: 2;
@@ -208,22 +209,5 @@
             <div class="col1"><a href="contact.html">Contact Us</a></div>
         </div>
     </div>
-     <script>
-        // Detect if the device supports touch
-        const isTouchDevice = () => 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-
-        if (isTouchDevice()) {
-            // Apply vibration effect on touch devices
-            document.querySelectorAll('.image-container').forEach(container => {
-                container.addEventListener('touchstart', () => {
-                    container.classList.add('vibrate');
-                });
-
-                container.addEventListener('touchend', () => {
-                    container.classList.remove('vibrate');
-                });
-            });
-        }
-    </script>
 </body>
 </html>
