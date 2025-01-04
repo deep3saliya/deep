@@ -208,16 +208,22 @@
         </div>
     </div>
     <script>
-        // Add touch support
-        document.querySelectorAll('.image-container').forEach(container => {
-            container.addEventListener('touchstart', () => {
-                container.classList.add('vibrate');
-            });
+        // Function to detect if the device is touch-enabled
+        const isTouchDevice = () => {
+            return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        };
 
-            container.addEventListener('touchend', () => {
-                container.classList.remove('vibrate');
+        if (isTouchDevice()) {
+            document.querySelectorAll('.image-container').forEach(container => {
+                container.addEventListener('touchstart', () => {
+                    container.classList.add('vibrate');
+                });
+
+                container.addEventListener('touchend', () => {
+                    container.classList.remove('vibrate');
+                });
             });
-        });
+        }
     </script>
 </body>
 </html>
